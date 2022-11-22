@@ -60,8 +60,8 @@ const Checkbox = ({
   props?: any[];
 }) => (
   <CheckboxContainer className={className} onClick={onChange}>
-    <HiddenCheckbox checked={checked} {...props} />
-    <StyledCheckbox checked={checked}>
+    <HiddenCheckbox checked={checked} onChange={onChange} {...props} />
+    <StyledCheckbox checked={checked} onChange={onChange}>
       <Icon viewBox="0 0 24 24">
         <polyline points="20 6 9 17 4 12" />
       </Icon>

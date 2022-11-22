@@ -6,21 +6,24 @@ import * as S from "./IssuesTable.styled";
 export const IssuesTable = () => {
   const { state } = useAppContext();
 
-  const content =
-    state.issues.length > 0 ? (
-      state.issues.map((issue) => <TableRow data={issue} />)
-    ) : (
-      <EmptyStateComponent />
-    );
+  const showData = state.issues.length > 0;
 
   return (
-    <S.StyledTable>
-      <thead>
-        <tr>
-          <th colSpan={2}>The table header</th>
-        </tr>
-      </thead>
-      <tbody>{content}</tbody>
-    </S.StyledTable>
+    <>
+      <S.StyledTable>
+        <thead>
+          <tr>
+            <th colSpan={2}>The table header</th>
+          </tr>
+        </thead>
+        <tbody>
+          {showData &&
+            state.issues.map((issue) => (
+              <TableRow key={issue.title} data={issue} />
+            ))}
+        </tbody>
+      </S.StyledTable>
+      {!showData && <EmptyStateComponent />}
+    </>
   );
 };
