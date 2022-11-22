@@ -1,16 +1,10 @@
 {
   "files": {
-    "main.css": "/issuetracker/static/css/main.073c9b0a.css",
-    "main.js": "/issuetracker/static/js/main.90e29c43.js",
-    "static/js/787.28cb0dcd.chunk.js": "/issuetracker/static/js/787.28cb0dcd.chunk.js",
-    "static/media/logo.svg": "/issuetracker/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.js": "/issuetracker/static/js/main.87ced05c.js",
     "index.html": "/issuetracker/index.html",
-    "main.073c9b0a.css.map": "/issuetracker/static/css/main.073c9b0a.css.map",
-    "main.90e29c43.js.map": "/issuetracker/static/js/main.90e29c43.js.map",
-    "787.28cb0dcd.chunk.js.map": "/issuetracker/static/js/787.28cb0dcd.chunk.js.map"
+    "main.87ced05c.js.map": "/issuetracker/static/js/main.87ced05c.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.90e29c43.js"
+    "static/js/main.87ced05c.js"
   ]
 }
