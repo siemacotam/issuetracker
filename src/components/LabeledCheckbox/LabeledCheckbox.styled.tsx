@@ -1,10 +1,10 @@
+import { Statuses } from "src/AppContext/AppContext.types";
 import styled from "styled-components/macro";
+import { checkboxLabel } from "./lLabeledCheckbox.const";
 
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
-  margin-right: 10px;
-  margin-left: 10px;
 `;
 
 const Icon = styled.svg`
@@ -48,24 +48,32 @@ const StyledCheckbox = styled.div<{ checked: boolean }>`
   }
 `;
 
+const StyledLabel = styled.span`
+  display: inline-block;
+  padding: 0 10px;
+`;
+
 const Checkbox = ({
   className,
   checked,
   onChange,
+  status,
   ...props
 }: {
   className?: string;
   checked: boolean;
   onChange: () => void;
+  status: Statuses;
   props?: any[];
 }) => (
-  <CheckboxContainer className={className} onClick={onChange}>
+  <CheckboxContainer className={className}>
     <HiddenCheckbox checked={checked} onChange={onChange} {...props} />
     <StyledCheckbox checked={checked} onChange={onChange}>
       <Icon viewBox="0 0 24 24">
         <polyline points="20 6 9 17 4 12" />
       </Icon>
     </StyledCheckbox>
+    <StyledLabel>{checkboxLabel(status)}</StyledLabel>
   </CheckboxContainer>
 );
 

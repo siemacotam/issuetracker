@@ -15,4 +15,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const CheckboxWrapper = styled.div``;
+export const CheckboxWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;

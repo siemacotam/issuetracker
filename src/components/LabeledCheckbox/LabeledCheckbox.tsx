@@ -2,7 +2,6 @@ import { Statuses } from "src/AppContext/AppContext.types";
 import { changeStatus } from "src/AppContext/Reducers/mainReducer.helpers";
 import { useAppContext } from "src/hooks";
 import Checkbox from "./LabeledCheckbox.styled";
-import { checkboxLabel } from "./lLabeledCheckbox.const";
 
 interface LabeledCheckboxProps {
   status: Statuses | "";
@@ -22,9 +21,10 @@ export const LabeledCheckbox = ({ status }: LabeledCheckboxProps) => {
   };
 
   return (
-    <>
-      <Checkbox checked={checked} onChange={handleCheckboxChange} />
-      <span>{checkboxLabel(status)}</span>
-    </>
+    <Checkbox
+      checked={checked}
+      onChange={handleCheckboxChange}
+      status={status}
+    />
   );
 };
