@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AddIssue, IssuesTable, ManagementPanel } from "src/components";
+import { AddIssue, IssuesList, ManagementPanel } from "src/components";
 import * as S from "./Main.styled";
 
 export const Main = () => {
@@ -13,7 +13,7 @@ export const Main = () => {
       <S.MainContentWrapper>
         <S.TableContainer closed={openAddPanel}>
           <ManagementPanel handleClick={openPanel} />
-          <IssuesTable />
+          <IssuesList />
         </S.TableContainer>
         <S.FormContainer closed={!openAddPanel}>
           <AddIssue handleClick={closePanel} />
