@@ -5,6 +5,7 @@ import {
   AddIssue,
   ChangeIssueStatus,
   ChangeStatus,
+  SetIssues,
 } from "./mainReducer.types";
 
 export const addIssue = (issue: Issue): AddIssue => ({
@@ -22,5 +23,10 @@ export const changeIssueStatus = (issue: Issue): ChangeIssueStatus => ({
   payload: issue,
 });
 
-// export const updateLocalStorage = (state: AppContextProps) =>
-//   localStorage.setItem("musicapp", JSON.stringify(state));
+export const setIssues = (issues: Issue[]): SetIssues => ({
+  type: ActionType.SET_ISSUES,
+  payload: issues,
+});
+
+export const updateLocalStorage = (issues: Issue[]) =>
+  localStorage.setItem("issues", JSON.stringify(issues));

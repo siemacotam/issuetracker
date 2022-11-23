@@ -5,6 +5,7 @@ export enum ActionType {
   ADD,
   CHANGE_STATUS,
   CHANGE_ISSUE_STATUS,
+  SET_ISSUES,
 }
 
 export interface AddIssue {
@@ -22,4 +23,9 @@ export interface ChangeIssueStatus {
   payload: Issue;
 }
 
-export type Actions = AddIssue | ChangeStatus | ChangeIssueStatus;
+export interface SetIssues {
+  type: ActionType.SET_ISSUES;
+  payload: Issue[];
+}
+
+export type Actions = AddIssue | ChangeStatus | ChangeIssueStatus | SetIssues;

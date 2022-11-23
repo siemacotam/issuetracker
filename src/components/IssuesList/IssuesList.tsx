@@ -16,9 +16,9 @@ export const IssuesList = () => {
   return (
     <S.Container>
       {showData ? (
-        filteredData.map((issue) => (
-          <IssueElement key={issue.title} data={issue} />
-        ))
+        filteredData
+          .map((issue) => <IssueElement key={issue.title} data={issue} />)
+          .reverse()
       ) : (
         <EmptyStateComponent />
       )}
