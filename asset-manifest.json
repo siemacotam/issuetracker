@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/issuetracker/static/js/main.d376291b.js",
+    "main.js": "/issuetracker/static/js/main.066e24e9.js",
     "index.html": "/issuetracker/index.html",
-    "main.d376291b.js.map": "/issuetracker/static/js/main.d376291b.js.map"
+    "main.066e24e9.js.map": "/issuetracker/static/js/main.066e24e9.js.map"
   },
   "entrypoints": [
-    "static/js/main.d376291b.js"
+    "static/js/main.066e24e9.js"
   ]
 }
