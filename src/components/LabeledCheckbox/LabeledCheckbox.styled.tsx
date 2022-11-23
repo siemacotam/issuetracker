@@ -1,10 +1,13 @@
+import { statuses } from "src/AppContext/AppContext.const";
 import { Statuses } from "src/AppContext/AppContext.types";
 import styled from "styled-components/macro";
 import { checkboxLabel } from "./lLabeledCheckbox.const";
+import { darken } from "polished";
 
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 `;
 
 const Icon = styled.svg`
@@ -26,11 +29,33 @@ const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   width: 1px;
 `;
 
-const StyledCheckbox = styled.div<{ checked: boolean }>`
+interface StyledCheckboxProps {
+  checked: boolean;
+  status: Statuses;
+}
+
+const StyledCheckbox = styled.div<StyledCheckboxProps>`
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: ${(props) => (props.checked ? "salmon" : "papayawhip")};
+  background: ${({ theme, checked, status }) => {
+    switch (status) {
+      case statuses.open:
+        return checked
+          ? darken(0.5, theme.colors.openBackground)
+          : darken(0.1, theme.colors.openBackground);
+      case statuses.pending:
+        return checked
+          ? darken(0.5, theme.colors.pendingBackground)
+          : darken(0.1, theme.colors.pendingBackground);
+      case statuses.close:
+        return checked
+          ? darken(0.5, theme.colors.closedBackground)
+          : darken(0.1, theme.colors.closedBackground);
+      default:
+        return "";
+    }
+  }};
   border-radius: 3px;
   transition: all 150ms;
   font-family: SF Pro Display;
@@ -66,9 +91,9 @@ const Checkbox = ({
   status: Statuses;
   props?: any[];
 }) => (
-  <CheckboxContainer className={className}>
+  <CheckboxContainer className={className} onClick={onChange}>
     <HiddenCheckbox checked={checked} onChange={onChange} {...props} />
-    <StyledCheckbox checked={checked} onChange={onChange}>
+    <StyledCheckbox checked={checked} onChange={onChange} status={status}>
       <Icon viewBox="0 0 24 24">
         <polyline points="20 6 9 17 4 12" />
       </Icon>

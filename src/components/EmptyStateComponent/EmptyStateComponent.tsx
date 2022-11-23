@@ -1,5 +1,8 @@
-import { StyledEmptyStateComponent } from "./EmptyStateComponent.styled";
+import * as S from "./EmptyStateComponent.styled";
 
 export const EmptyStateComponent = () => (
-  <StyledEmptyStateComponent>pusto</StyledEmptyStateComponent>
+  <S.StyledEmptyStateComponent>
+    <S.StyledIcon />
+    <S.StyledText>No issues to show</S.StyledText>
+  </S.StyledEmptyStateComponent>
 );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ManagementPanel = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   margin: 0 10px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
   display: flex;
 `;

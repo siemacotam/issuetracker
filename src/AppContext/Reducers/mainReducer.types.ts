@@ -4,6 +4,7 @@ import { Statuses } from "../AppContext.types";
 export enum ActionType {
   ADD,
   CHANGE_STATUS,
+  CHANGE_ISSUE_STATUS,
 }
 
 export interface AddIssue {
@@ -16,4 +17,9 @@ export interface ChangeStatus {
   payload: Statuses;
 }
 
-export type Actions = AddIssue | ChangeStatus;
+export interface ChangeIssueStatus {
+  type: ActionType.CHANGE_ISSUE_STATUS;
+  payload: Issue;
+}
+
+export type Actions = AddIssue | ChangeStatus | ChangeIssueStatus;

@@ -1,7 +1,9 @@
 import { useFormik, FormikProvider } from "formik";
+import { useState } from "react";
 import { addIssue } from "src/AppContext/Reducers/mainReducer.helpers";
 import { Issue } from "src/global";
 import { useAppContext } from "src/hooks";
+import { AlertMessage } from "../AlertMessage";
 import { IssueButton } from "../IssueButton";
 import { initialValues, validationSchema } from "./AddIssue.const";
 import * as S from "./AddIssue.styled";
@@ -12,6 +14,7 @@ interface AddIssueProps {
 }
 
 export const AddIssue = ({ handleClick }: AddIssueProps) => {
+  const [error, setError] = useState("");
   const { dispatch, state } = useAppContext();
 
   const formik = useFormik<Issue>({
@@ -23,12 +26,13 @@ export const AddIssue = ({ handleClick }: AddIssueProps) => {
   const { title, description } = formik.values;
 
   const handleSubmit = async () => {
+    setError("");
     if (!title || !description) {
-      console.log("uzupelnij dane");
+      setError("Both values - title and description, needs to be filled");
       return;
     }
     if (state.issues.some((issue) => issue.title === title)) {
-      console.log("jest juz taki title");
+      setError("There is already issue with that title. Please change it");
       return;
     }
     dispatch(addIssue(formik.values));
@@ -43,6 +47,7 @@ export const AddIssue = ({ handleClick }: AddIssueProps) => {
           <S.StyledTitle>Add Issue</S.StyledTitle>
           <IssueButton handleClick={handleClick} />
         </S.StyledHeader>
+        {error.length > 0 && <AlertMessage text={error} />}
         <AddIssueForm />
       </FormikProvider>
       <S.StyledButton onClick={handleSubmit}>

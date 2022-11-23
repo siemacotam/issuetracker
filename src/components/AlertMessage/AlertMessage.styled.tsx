@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import { BsInfoCircle } from "react-icons/bs";
+import { AiOutlineWarning } from "react-icons/ai";
 
 export const StyledEmptyStateComponent = styled.div`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.openBackground};
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin: 10px 20px;
 `;
 
-export const StyledIcon = styled(BsInfoCircle)`
+export const StyledIcon = styled(AiOutlineWarning)`
   font-size: 1.5rem;
 `;
 

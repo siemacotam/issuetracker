@@ -6,3 +6,6 @@ export * from "./IssuesList";
 export * from "./EmptyStateComponent";
 export * from "./AddIssue";
 export * from "./IssueElement";
+export * from "./StatusSelect";
+export * from "./AlertMessage";
+export * from "./Success";

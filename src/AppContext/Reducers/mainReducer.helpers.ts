@@ -1,6 +1,11 @@
 import { Issue } from "src/global";
 import { Statuses } from "../AppContext.types";
-import { ActionType, AddIssue, ChangeStatus } from "./mainReducer.types";
+import {
+  ActionType,
+  AddIssue,
+  ChangeIssueStatus,
+  ChangeStatus,
+} from "./mainReducer.types";
 
 export const addIssue = (issue: Issue): AddIssue => ({
   type: ActionType.ADD,
@@ -12,19 +17,10 @@ export const changeStatus = (status: Statuses): ChangeStatus => ({
   payload: status,
 });
 
-// export const updateStatus = (
-//   state: AppContextProps,
-//   action: Actions,
-//   type: boolean
-// ) => {
-//   const index = state.list.findIndex((el) => el.id === action.payload);
-//   const newElement = { ...state.list[index], isFav: type };
-//   const updatedList = [...state.list];
-//   updatedList.splice(index, 1, newElement);
-//   const updatedState = { ...state, list: updatedList };
-//   updateLocalStorage(updatedState);
-//   return updatedState;
-// };
+export const changeIssueStatus = (issue: Issue): ChangeIssueStatus => ({
+  type: ActionType.CHANGE_ISSUE_STATUS,
+  payload: issue,
+});
 
 // export const updateLocalStorage = (state: AppContextProps) =>
 //   localStorage.setItem("musicapp", JSON.stringify(state));

@@ -6,15 +6,22 @@ import * as S from "./IssuesList.styled";
 export const IssuesList = () => {
   const { state } = useAppContext();
 
-  const showData = state.issues.length > 0;
+  const filteredData =
+    state.status === ""
+      ? state.issues
+      : state.issues.filter((issue) => issue.status === state.status);
+
+  const showData = filteredData.length > 0;
 
   return (
     <S.Container>
-      {showData &&
-        state.issues.map((issue) => (
+      {showData ? (
+        filteredData.map((issue) => (
           <IssueElement key={issue.title} data={issue} />
-        ))}
-      {!showData && <EmptyStateComponent />}
+        ))
+      ) : (
+        <EmptyStateComponent />
+      )}
     </S.Container>
   );
 };

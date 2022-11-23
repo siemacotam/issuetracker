@@ -13,6 +13,13 @@ export const mainReducer = (
       return { ...state, issues: updatedState };
     case ActionType.CHANGE_STATUS:
       return { ...state, status: action.payload };
+    case ActionType.CHANGE_ISSUE_STATUS:
+      const index = state.issues.findIndex(
+        (el) => el.title === action.payload.title
+      );
+      const editedArray = [...state.issues];
+      editedArray.splice(index, 1, action.payload);
+      return { ...state, issues: editedArray };
     default:
       return state;
   }
