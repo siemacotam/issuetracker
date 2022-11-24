@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { StatusSelect } from "../StatusSelect";
-import { Success } from "../Success";
+import { StatusSelect, Success, DescriptionAccordion } from "src/components";
 import * as S from "./IssueElement.styled";
 import { IssueElementProps } from "./IssueElement.types";
 
@@ -12,9 +11,11 @@ export const IssueElement = ({ data }: IssueElementProps): JSX.Element => {
     <S.Container status={status}>
       <S.IssueTextContainer>
         <S.StyledTitle>{title}</S.StyledTitle>
-        <S.StyledDescription>{description}</S.StyledDescription>
-        <S.StyledSpan>ID : {id}</S.StyledSpan>
-        <S.StyledSpan>Added : {added}</S.StyledSpan>
+        <DescriptionAccordion description={description} />
+        <S.IssueElementFooter>
+          <S.StyledSpan>ID : {id}</S.StyledSpan>
+          <S.StyledSpan>Added : {added}</S.StyledSpan>
+        </S.IssueElementFooter>
       </S.IssueTextContainer>
       <StatusSelect data={data} setShowSuccess={setShowSuccess} />
       {showSuccess && <Success />}

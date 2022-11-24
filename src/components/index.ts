@@ -9,3 +9,4 @@ export * from "./IssueElement";
 export * from "./StatusSelect";
 export * from "./AlertMessage";
 export * from "./Success";
+export * from "./DescriptionAccordion";

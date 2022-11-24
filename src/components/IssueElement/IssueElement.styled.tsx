@@ -45,17 +45,21 @@ export const IssueTextContainer = styled.div`
   }
 `;
 
-export const StyledTitle = styled.h4`
-  font-family: ${({ theme }) => theme.fonts.title};
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  word-break: break-all;
+export const IssueElementFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 5px;
+  border-top: 1px solid ${({ theme }) => theme.colors.background};
 `;
 
-export const StyledDescription = styled.p`
-  font-size: 0.8rem;
+export const StyledTitle = styled.h3`
+  font-family: ${({ theme }) => theme.fonts.title};
+  font-size: 1.3rem;
+  margin-bottom: 5px;
   word-break: break-all;
-  margin-bottom: 25px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.background};
+  padding-bottom: 5px;
 `;
 
 export const StyledSpan = styled.span`
