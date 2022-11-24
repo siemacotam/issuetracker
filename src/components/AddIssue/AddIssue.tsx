@@ -4,17 +4,13 @@ import cryptoRandomString from "crypto-random-string";
 import { addIssue } from "src/AppContext/Reducers/mainReducer.helpers";
 import { Issue } from "src/global";
 import { useAppContext } from "src/hooks";
-import { AlertMessage } from "../AlertMessage";
-import { IssueButton } from "../IssueButton";
+import { AlertMessage, IssueButton } from "src/components";
 import { initialValues, validationSchema } from "./AddIssue.const";
 import * as S from "./AddIssue.styled";
 import { AddIssueForm } from "./AddIssueForm";
+import { AddIssueProps } from "./AddIssue.types";
 
-interface AddIssueProps {
-  handleClick: () => void;
-}
-
-export const AddIssue = ({ handleClick }: AddIssueProps) => {
+export const AddIssue = ({ handleClick }: AddIssueProps): JSX.Element => {
   const [error, setError] = useState("");
   const { dispatch, state } = useAppContext();
 

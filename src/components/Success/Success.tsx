@@ -1,6 +1,6 @@
 import * as S from "./Success.styled";
 
-export const Success = () => (
+export const Success = (): JSX.Element => (
   <S.AnimationWrapper>
     <S.SuccessCheckmark>
       <S.CheckIcon>

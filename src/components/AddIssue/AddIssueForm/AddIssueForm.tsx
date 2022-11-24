@@ -2,7 +2,7 @@ import { Issue } from "src/global";
 import { useFormikContext, ErrorMessage } from "formik";
 import * as S from "./AddIssueForm.styled";
 
-export const AddIssueForm = () => {
+export const AddIssueForm = (): JSX.Element => {
   const {
     values: { title, description },
     handleChange,

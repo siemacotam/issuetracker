@@ -1,3 +1,3 @@
 import { StyledLogo } from "./Logo.styled";
 
-export const Logo = () => <StyledLogo>Issue tracker</StyledLogo>;
+export const Logo = (): JSX.Element => <StyledLogo>Issue tracker</StyledLogo>;

@@ -6,7 +6,10 @@ import { optionsToShow, values } from "./StatusSelect.const";
 import * as S from "./StatusSelect.styled";
 import { SelectProps } from "./StatusSelect.types";
 
-export const StatusSelect = ({ data, setShowSuccess }: SelectProps) => {
+export const StatusSelect = ({
+  data,
+  setShowSuccess,
+}: SelectProps): JSX.Element => {
   const { status } = data;
   const [currentValue, setCurrentValue] = useState(status);
   const [open, setOpen] = useState(false);

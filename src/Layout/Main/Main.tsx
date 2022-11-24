@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AddIssue, IssuesList, ManagementPanel } from "src/components";
 import * as S from "./Main.styled";
 
-export const Main = () => {
+export const Main = (): JSX.Element => {
   const [openAddPanel, setOpenAddPanel] = useState(false);
 
   const closePanel = () => setOpenAddPanel(false);

@@ -7,7 +7,7 @@ interface ProviderProps {
   children: JSX.Element;
 }
 
-export const ThemeProvider = ({ children }: ProviderProps) => (
+export const ThemeProvider = ({ children }: ProviderProps): JSX.Element => (
   <StyledThemeProvider theme={{ fonts, colors }}>
     <GlobalStyle />
     {children}

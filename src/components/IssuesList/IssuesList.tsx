@@ -3,7 +3,7 @@ import { EmptyStateComponent } from "../EmptyStateComponent";
 import { IssueElement } from "../IssueElement";
 import * as S from "./IssuesList.styled";
 
-export const IssuesList = () => {
+export const IssuesList = (): JSX.Element => {
   const { state } = useAppContext();
 
   const filteredData =

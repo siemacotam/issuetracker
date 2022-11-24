@@ -1,8 +1,8 @@
 import { statuses } from "src/AppContext/AppContext.const";
 import { Statuses } from "src/AppContext/AppContext.types";
 import styled from "styled-components/macro";
-import { checkboxLabel } from "./lLabeledCheckbox.const";
 import { darken } from "polished";
+import { capitalize } from "src/global";
 
 const CheckboxContainer = styled.div`
   vertical-align: middle;
@@ -99,7 +99,7 @@ const Checkbox = ({
         <polyline points="20 6 9 17 4 12" />
       </Icon>
     </StyledCheckbox>
-    <StyledLabel>{checkboxLabel(status)}</StyledLabel>
+    <StyledLabel>{capitalize(status)}</StyledLabel>
   </CheckboxContainer>
 );
 

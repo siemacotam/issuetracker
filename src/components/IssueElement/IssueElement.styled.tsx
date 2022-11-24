@@ -41,6 +41,7 @@ export const IssueTextContainer = styled.div`
   padding: 10px;
   @media (max-width: 768px) {
     width: 100%;
+    margin-right: 0px;
   }
 `;
 

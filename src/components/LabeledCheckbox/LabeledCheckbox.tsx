@@ -7,7 +7,9 @@ interface LabeledCheckboxProps {
   status: Statuses | "";
 }
 
-export const LabeledCheckbox = ({ status }: LabeledCheckboxProps) => {
+export const LabeledCheckbox = ({
+  status,
+}: LabeledCheckboxProps): JSX.Element => {
   const { dispatch, state } = useAppContext();
 
   const checked = state.status === status;

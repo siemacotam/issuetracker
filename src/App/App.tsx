@@ -13,6 +13,7 @@ function App() {
       const list = JSON.parse(existedIssues);
       dispatch(setIssues(list));
     }
+    /* eslint-disable react-hooks/exhaustive-deps */
   }, []);
 
   return (

@@ -1,14 +1,12 @@
 import { StyledButton } from "./IssueButton.styled";
-import * as S from "./IssueButton.styled";
 import { GrAddCircle } from "react-icons/gr";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { IssueButtonProps } from "./IssueButton.types";
 
-interface IssueButtonProps {
-  handleClick: () => void;
-  open?: boolean;
-}
-
-export const IssueButton = ({ handleClick, open }: IssueButtonProps) => (
+export const IssueButton = ({
+  handleClick,
+  open,
+}: IssueButtonProps): JSX.Element => (
   <StyledButton onClick={handleClick}>
     {open ? <GrAddCircle /> : <AiOutlineCloseCircle />}
   </StyledButton>
