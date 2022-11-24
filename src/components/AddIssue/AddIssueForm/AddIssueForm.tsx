@@ -14,10 +14,11 @@ export const AddIssueForm = () => {
       <S.StyledInput name="title" value={title} onChange={handleChange} />
       <ErrorMessage name="title" />
       <S.InputLabel>Description</S.InputLabel>
-      <S.StyledInput
+      <S.StyledTextarea
         name="description"
         value={description}
         onChange={handleChange}
+        rows={5}
       />
       <ErrorMessage name="description" />
     </S.Container>

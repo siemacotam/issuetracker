@@ -12,8 +12,10 @@ export const StatusSelect = ({ data, setShowSuccess }: SelectProps) => {
   const [open, setOpen] = useState(false);
   const { dispatch } = useAppContext();
 
+  const isIssueResolved = status === statuses.close;
+
   const handleOpen = () => {
-    if (status !== statuses.close) setOpen(true);
+    setOpen(true);
   };
 
   const handleClose = () => {
@@ -29,6 +31,7 @@ export const StatusSelect = ({ data, setShowSuccess }: SelectProps) => {
         dispatch(changeIssueStatus({ ...data, status: value }));
       }, 3000);
     } else {
+      setCurrentValue(value);
       dispatch(changeIssueStatus({ ...data, status: value }));
     }
   };
@@ -43,9 +46,17 @@ export const StatusSelect = ({ data, setShowSuccess }: SelectProps) => {
 
   return (
     <S.SelectContainer>
-      <S.SelectLabelButton onClick={handleOpen} status={status}>
-        {selectLabel}
-      </S.SelectLabelButton>
+      {isIssueResolved ? (
+        <S.StyledClosedInfo>
+          <S.StyledClosedIcon />
+          <S.StyledSpan>Closed</S.StyledSpan>
+        </S.StyledClosedInfo>
+      ) : (
+        <S.SelectLabelButton onClick={handleOpen} status={status}>
+          {selectLabel}
+        </S.SelectLabelButton>
+      )}
+
       <S.DropdownStyle isVisible={open}>
         {optionsToShow(currentValue).map(({ value, label }) => (
           <S.DropdownItem

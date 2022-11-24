@@ -7,9 +7,14 @@ export const StyledInput = styled.input`
   background: ${({ theme }) => lighten(0.1, theme.colors.background)};
   border: none;
   border-radius: 3px;
-  ::placeholder {
-    color: palevioletred;
-  }
+`;
+
+export const StyledTextarea = styled.textarea`
+  font-size: 18px;
+  padding: 10px;
+  background: ${({ theme }) => lighten(0.1, theme.colors.background)};
+  border: none;
+  border-radius: 3px;
 `;
 
 export const Container = styled.div`

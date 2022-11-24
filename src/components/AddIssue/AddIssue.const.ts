@@ -10,4 +10,6 @@ export const initialValues = {
   title: "",
   description: "",
   status: statuses.open,
+  added: "",
+  id: "",
 };

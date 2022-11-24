@@ -1,5 +1,6 @@
 import { useFormik, FormikProvider } from "formik";
 import { useState } from "react";
+import cryptoRandomString from "crypto-random-string";
 import { addIssue } from "src/AppContext/Reducers/mainReducer.helpers";
 import { Issue } from "src/global";
 import { useAppContext } from "src/hooks";
@@ -35,7 +36,14 @@ export const AddIssue = ({ handleClick }: AddIssueProps) => {
       setError("There is already issue with that title. Please change it");
       return;
     }
-    dispatch(addIssue(formik.values));
+
+    const issueData = {
+      ...formik.values,
+      added: new Date().toLocaleString(),
+      id: `IT-${cryptoRandomString({ length: 6 })}`,
+    };
+
+    dispatch(addIssue(issueData));
     formik.resetForm();
     handleClick();
   };

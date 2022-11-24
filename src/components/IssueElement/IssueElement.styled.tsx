@@ -21,25 +21,42 @@ export const Container = styled.div<ContainerProps>`
   }};
   padding: 15px;
   display: flex;
-  min-height: 150px;
+  min-height: 135px;
   border-radius: 5px;
   align-items: center;
   position: relative;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
-export const ContentContainer = styled.div`
+export const IssueTextContainer = styled.div`
   flex-grow: 1;
+  margin-right: 20px;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid ${({ theme }) => theme.colors.background};
+  border-radius: 5px;
+  padding: 10px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
-export const StyledTitle = styled.span`
+export const StyledTitle = styled.h4`
   font-family: ${({ theme }) => theme.fonts.title};
+  font-size: 1.1rem;
   margin-bottom: 10px;
+  word-break: break-all;
 `;
 
-export const StyledDescription = styled.span`
+export const StyledDescription = styled.p`
   font-size: 0.8rem;
+  word-break: break-all;
+  margin-bottom: 25px;
 `;
 
-export const StyledStatus = styled.select``;
+export const StyledSpan = styled.span`
+  font-size: 0.7rem;
+`;

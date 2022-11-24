@@ -8,6 +8,7 @@ export const AnimationWrapper = styled.div`
   height: 100%;
   background-color: white;
   border: 1px solid black;
+  border-radius: 5px;
   z-index: 1000;
 `;
 
@@ -79,15 +80,15 @@ const iconLineLong = keyframes`
 
 export const SuccessCheckmark = styled.div`
   width: 80px;
-  height: 115px;
+  height: 80px;
   margin: 0 auto;
-
   position: absolute;
   left: calc(50% - 40px);
   top: calc(50% - 57.5px);
 `;
 
 export const CheckIcon = styled.div`
+  margin-top: 10px;
   width: 80px;
   height: 80px;
   position: relative;

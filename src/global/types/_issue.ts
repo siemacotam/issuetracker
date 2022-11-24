@@ -4,4 +4,6 @@ export interface Issue {
   title: string;
   description: string;
   status: Statuses;
+  id: string;
+  added: string;
 }

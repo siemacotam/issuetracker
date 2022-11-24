@@ -5,9 +5,10 @@ import { checkboxLabel } from "./lLabeledCheckbox.const";
 import { darken } from "polished";
 
 const CheckboxContainer = styled.div`
-  display: inline-block;
   vertical-align: middle;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
 const Icon = styled.svg`

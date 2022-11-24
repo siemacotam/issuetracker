@@ -1,6 +1,7 @@
 import { statuses } from "src/AppContext/AppContext.const";
 import { Statuses } from "src/AppContext/AppContext.types";
 import styled from "styled-components";
+import { BsHandThumbsUp } from "react-icons/bs";
 
 export const SelectContainer = styled.div`
   position: relative;
@@ -25,10 +26,12 @@ export const SelectLabelButton = styled.button<SelectLabelButtonProps>`
   justify-content: space-between;
   border: 1px solid slategrey;
   cursor: pointer;
-  box-shadow: 0 1px 4px 0 #ccc;
   transition: 0.5s ease;
   &:hover {
     background-color: #eee;
+  }
+  @media (max-width: 768px) {
+    margin-top: 15px;
   }
 `;
 
@@ -59,8 +62,6 @@ interface DropdownItemProps {
 }
 
 export const DropdownItem = styled.div<DropdownItemProps>`
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: flex;
   align-items: center;
   width: 90%;
@@ -79,3 +80,22 @@ export const DropdownItem = styled.div<DropdownItemProps>`
     outline: none;
   }
 `;
+
+export const StyledClosedInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 112px;
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
+`;
+
+export const StyledClosedIcon = styled(BsHandThumbsUp)`
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+`;
+
+export const StyledSpan = styled.span``;

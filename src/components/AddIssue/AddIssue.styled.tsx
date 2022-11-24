@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { AiOutlineDoubleLeft } from "react-icons/ai";
 
 export const Container = styled.div`
+  margin: 10px;
   padding: 10px;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 10px;
